@@ -1,0 +1,232 @@
+1. Selectores
+Selector Universal:
+
+* → sel-uni
+Selector de Tipo:
+
+element → sel-typ
+Selector de Clase:
+
+.class → sel-cla
+Selector de ID:
+
+#id → sel-id
+Selector de Atributo:
+
+[attribute] → sel-att
+
+Selector de Descendiente:
+
+ancestor descendant → sel-des
+Selector de Hijo:
+
+parent > child → sel-hij
+
+Selector de Hermano Adyacente:
+
+element + element → sel-her-ady
+
+Selector de Hermano General:
+
+element ~ element → sel-her-gen
+
+2. Propiedades de Estilo
+
+Color:
+
+color → col
+background-color → bac-col
+border-color → bor-col
+
+Texto:
+
+font-family → fon-fam
+font-size → fon-siz
+font-weight → fon-wei
+font-style → fon-sty
+text-align → tex-ali
+text-decoration → tex-dec
+text-transform → tex-tra
+line-height → lin-hei
+letter-spacing → let-spa
+word-spacing → wor-spa
+
+Caja (Box Model):
+
+width → wid
+height → hei
+padding → pad
+border → bor
+margin → mar
+box-sizing → box-siz
+
+Posicionamiento:
+
+position → pos
+top → top
+right → rig
+bottom → bot
+left → lef
+z-index → z-ind
+
+Display:
+
+display → dis
+visibility → vis
+
+Flexbox:
+
+display: flex → dis-fle
+flex-direction → fle-dir
+flex-wrap → fle-wra
+justify-content → jus-con
+align-items → ali-ite
+align-content → ali-con
+flex-grow → fle-gro
+flex-shrink → fle-shr
+flex-basis → fle-bas
+
+Grid:
+
+display: grid → dis-gri
+grid-template-columns → gri-tem-col
+grid-template-rows → gri-tem-row
+grid-area → gri-are
+grid-column → gri-col
+grid-row → gri-row
+justify-items → jus-ite
+align-items → ali-ite
+justify-content → jus-con
+align-content → ali-con
+
+List:
+
+list-style → lis-sty
+list-style-type → lis-sty-typ
+list-style-position → lis-sty-pos
+list-style-image → lis-sty-im
+Background:
+
+background → bac
+background-image → bac-im
+background-position → bac-pos
+background-size → bac-siz
+background-repeat → bac-rep
+Border:
+
+border → bor
+border-width → bor-wid
+border-style → bor-sty
+border-radius → bor-rad
+border-top → bor-top
+border-right → bor-rig
+border-bottom → bor-bot
+border-left → bor-lef
+Animation:
+
+animation → ani
+animation-name → ani-nam
+animation-duration → ani-dur
+animation-timing-function → ani-tim-fun
+animation-delay → ani-del
+animation-iteration-count → ani-ite-cou
+animation-direction → ani-dir
+animation-fill-mode → ani-fil-mod
+Transition:
+
+transition → tra
+transition-property → tra-pro
+transition-duration → tra-dur
+transition-timing-function → tra-tim-fun
+transition-delay → tra-del
+
+Opacity:
+
+opacity → opa
+
+Transform:
+
+transform → tra
+transform-origin → tra-ori
+translate → tra
+rotate → rot
+scale → sca
+skew → ske
+
+Filter:
+
+filter → fil
+blur → blu
+brightness → bri
+contrast → con
+drop-shadow → dro-sha
+grayscale → gra
+hue-rotate → hue-rot
+invert → inv
+opacity → opa
+saturate → sat
+sepia → sep
+
+3. Unidades y Medidas
+Longitud:
+
+px → px
+em → em
+rem → rem
+vw → vw
+vh → vh
+% → %
+Tiempo:
+
+s → s
+ms → ms
+
+4. Pseudo-clases y Pseudo-elementos
+
+Pseudo-clases:
+
+:hover → :hov
+:focus → :fo
+:active → :act
+:visited → :vis
+:link → :lin
+:first-child → :fir-chil
+:last-child → :las-chil
+:nth-child() → :nth-chil
+:nth-of-type() → :nth-typ
+:not() → :not
+:empty → :emp
+
+Pseudo-elementos:
+
+::before → ::bef
+::after → ::aft
+::first-line → ::fir-lin
+::first-letter → ::fir-let
+5. Reglas de CSS
+Media Queries:
+@media → @med
+@import → @imp
+@font-face → @fon-fac
+@keyframes → @key
+
+6. Otras Funcionalidades
+
+Custom Properties (CSS Variables):
+
+--variable-name → --var-nam
+var(--variable-name) → var(--var-nam)
+Grid Layout:
+
+grid-template-areas → gri-tem-are
+grid-template → gri-tem
+grid-column-gap → gri-col-gap
+grid-row-gap → gri-row-gap
+
+Flexbox Layout:
+
+flex-direction → fle-dir
+align-self → ali-sel
+align-content → ali-con
+align-items → ali-ite
+justify-content → jus-con
