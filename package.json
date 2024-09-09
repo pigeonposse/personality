@@ -1,7 +1,25 @@
 {
-    "name": "personality",
-    "version": "1.1.0",
-    "description": "Librería para establecer y mantener la personalidad de la IA",
+    "name": "create-personality",
+    "version": "0.1.0",
+    "description": "Library for crafting and sustaining AI personalities",
+    "keywords": [
+      "ia",
+      "personality",
+      "library",
+      "ollama",
+      "gpt",
+      "openai",
+      "gemma",
+      "llama",
+      "llm",
+      "node",
+      "js"
+    ],
+    "homepage": "https://github.com/pigeonposse/personality",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/pigeonposse/personality"
+    },
     "main": "index.js",
     "type": "commonjs",
     "bin": {
@@ -10,7 +28,7 @@
     "scripts": {
       "test": "echo \"No tests specified\" && exit 0"
     },
-    "author": "Tu Nombre",
+    "author": "Alejo Malia <alejomalia@gmail.com>",
     "license": "MIT",
     "dependencies": {
       "ps-list": "^8.1.1",
