@@ -14,7 +14,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 env:
   GITHUB_TOKEN: ${{ github.token }}
-  NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN_ALEJO }}
 
 
 ###############################################################################
@@ -89,7 +89,7 @@ jobs:
           createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ env.NPM_TOKEN_ALEJO }}
+          NPM_TOKEN: ${{ env.NPM_TOKEN }}
 
       - name: Get updated versions if exists
         id: updated
