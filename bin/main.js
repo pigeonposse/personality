@@ -9,7 +9,17 @@ import {
 	spawnSync,
 	appID,
 	sanitizeFileName,
-} from './utils.js'
+} from './utils/main.js'
+
+process.on( 'exit', async function ( ){
+
+	// console.log( code )
+	// if( code === 130 ||   ) return
+
+	console.log( '\n' )
+	return console.warn( 'Process cancelled 👋' )
+
+} )
 
 export class AIConfigurator {
 
@@ -130,3 +140,4 @@ done
 	}
 
 }
+

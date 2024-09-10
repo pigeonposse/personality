@@ -1,4 +1,4 @@
-import { execSync } from './utils.js'
+import { execSync } from './utils/main.js'
 
 export class AIDetector {
 

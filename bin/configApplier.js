@@ -7,25 +7,30 @@ import {
 	joinPath,
 	sanitizeFileName,
 	writeFile, 
-} from './utils.js'
+} from './utils/main.js'
 
 export class ConfigApplier {
 
 	constructor( aiName, personality ) {
 
+		const userLang = process.env.LANG || process.env.LANGUAGE || process.env.LC_ALL || process.env.LC_MESSAGES
+
 		this.aiName      = aiName
 		this.personality = personality
+
 		this.texts       = {
 			configSaved   : 'Personality configuration saved at: ',
 			configContent : `You are an AI assistant with the following characteristics:
   - Tone: ${this.personality.tone}
   - Formality: ${this.personality.formality}
-  - Main topics: ${this.personality.topics.join( ', ' )}
-  - Handling difficult questions: ${this.personality.difficulty_handling}
+  - Main topic: ${this.personality.topics}
+  - Handling difficult questions: ${this.personality.difficultyHandling}
   - Type of humor: ${this.personality.humor}
-  - General description: ${this.personality.general_description}
-  
-  You should greet the user and introduce yourself according to this configuration. Mention that you have been set up to primarily talk about ${this.personality.topics.join( ', ' )} and that the user can ask you anything about these topics.
+  - General description: ${this.personality.generalDescription}
+  - The user's language is ${userLang}, if you don't know this language, respond in English.
+  - The text cannot exceed this word limit: ${this.personality.responseLength}
+
+  You should greet the user and introduce yourself according to this configuration. Mention that you have been set up to primarily talk about ${this.personality.topics} and that the user can ask you anything about these topics.
   
   Remember to maintain this personality and thematic focus in all your interactions.`,
 		}
@@ -41,7 +46,7 @@ export class ConfigApplier {
 
 		await ensureDirectoryExists( this.filesFolder )
 		await writeFile( configPath, configContent )
-    
+
 		console.log( `${this.texts.configSaved}${configPath}` )
 		return configPath
 	
