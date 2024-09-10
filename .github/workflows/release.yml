@@ -89,7 +89,7 @@ jobs:
           createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ env.NPM_TOKEN }}
+          NPM_TOKEN: ${{ env.NPM_TOKEN_ALEJO }}
 
       - name: Get updated versions if exists
         id: updated
