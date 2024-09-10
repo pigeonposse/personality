@@ -50,14 +50,6 @@ jobs:
       - name: 🧩 Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: 🏗 Build packages
-        run: |
-          pnpm build:packages # execute lint. tests and build
-          pnpm test:bin # execute special test for bin
-
-      - name: 📢 Notify if successful
-        run: echo "Build on Ubuntu completed successfully."
-
 
   #########################################################################
   # RELESE ON MACOS

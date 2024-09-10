@@ -23,7 +23,6 @@
 - 🔧 Easy Integration: Works seamlessly with Node.js and other frameworks
 - ⚡ Dynamic Adaptation: Configure real-time personality changes with minimal effort
 - 🌍 Open Source: MIT-licensed, available for public use and contributions
-`˜
 
 ## Prerquisits
 

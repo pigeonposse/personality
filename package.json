@@ -31,17 +31,26 @@
 	"files": [
 		"bin"
 	],
-	"main": "bin/cli.js",
+	"main": "bin/main.js",
 	"type": "module",
 	"bin": {
 		"personality": "./bin/cli.js"
 	},
 	"scripts": {
-		"dev": "node bin/cli.js"
+		"dev": "node bin/cli.js",
+		"build:bins": "node ./build.js"
 	},
 	"author": "Alejo Malia <alejomalia@gmail.com>",
+	"contributors": [
+		{
+			"name": "Angelo",
+			"email": "angelo@pigeonposse.com",
+			"url": "https://github.com/angelespejo"
+		}
+	],
 	"license": "GPL-3.0",
 	"devDependencies": {
+		"@backan/builder": "^0.0.15",
 		"@pigeon-posse/eslint-config": "1.0.1",
 		"@typescript-eslint/eslint-plugin": "8.2.0",
 		"@typescript-eslint/parser": "8.2.0",

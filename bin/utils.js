@@ -11,12 +11,13 @@ import {
 	chmod, 
 }    from 'node:fs/promises'
 import { tmpdir }           from 'node:os'
-import { join as joinPath } from 'node:path'
+import {
+	join as joinPath,
+	resolve as resolvePath, 
+} from 'node:path'
 
 export {
-
-}
-export {
+	resolvePath,
 	joinPath,
 	writeFile,
 	chmod, 
