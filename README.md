@@ -11,6 +11,8 @@
 
 > :warning: **_Beta_ version**. It can be installed and used but things may change in the future.
 
+[![demo](docs/demo.mov)](https://npmjs.com/package/create-personality)
+
 ## Library for Crafting and Sustaining AI Personalities
 
 `Personality` is a library designed to customize the personality configuration of AI running locally. It allows users to define and adjust the traits, communication style, and behavior of their AI models in detail, ensuring responses are coherent and aligned with specific project goals. Ideal for developers looking to add a distinctive and human-like touch to their AI applications.
