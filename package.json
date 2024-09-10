@@ -11,6 +11,7 @@
       "openai",
       "gemma",
       "llama",
+      "gpt-3",
       "llm",
       "node",
       "js"
