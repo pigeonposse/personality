@@ -3,7 +3,7 @@
 [![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
 [![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate) 
 
-[![Size](https://img.shields.io/bundlephobia/min/create-personality?label=Size&style=flat-square)](https://npmjs.com/package/create-personality)
+[![Size](https://img.shields.io/bundlephobia/minzip/create-personality)](https://npmjs.com/package/create-personality)
 [![License](https://img.shields.io/github/license/pigeonposse/personality?color=blue&label=License&style=flat-square)](https://npmjs.com/package/create-personality)
 [![Version](https://img.shields.io/npm/v/create-personality?color=a1b858&label&style=flat-square)](https://npmjs.com/package/create-personality)
 
