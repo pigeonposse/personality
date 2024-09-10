@@ -1,0 +1,23 @@
+###############################################################################
+# FOR PIGEONPOSSE USAGE
+###############################################################################
+
+web:
+  
+  - id: "personality"
+    name: "Personality"
+    type: "library"
+    subtypes:
+      - Bin
+      - CLI
+      - Node
+    version: "{{package.version}}"
+    description: "{{package.description}}"
+    homepage: "{{package.homepage}}"
+    repo: "{{package.repository.url}}"
+    license: "{{package.extra.licenseUrl}}"
+    logo: "https://raw.githubusercontent.com/pigeonposse/clippo/main/docs/public/logo.png"
+    banner: "https://raw.githubusercontent.com/pigeonposse/clippo/main/docs/public/banner.png"
+    status: "active"
+
+###############################################################################
