@@ -1,13 +1,13 @@
-[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](https://pigeonposse.com/) 
-[![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](https://pigeonposse.com/?popup=about) 
+# Personality by _PIGEONPOSSE_
+
+[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](https://pigeonposse.com/)
+[![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](https://pigeonposse.com/?popup=about)
 [![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
-[![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate) 
+[![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate)
 
 [![Size](https://img.shields.io/bundlephobia/minzip/create-personality)](https://npmjs.com/package/create-personality)
 [![License](https://img.shields.io/github/license/pigeonposse/personality?color=blue&label=License&style=flat-square)](https://npmjs.com/package/create-personality)
 [![Version](https://img.shields.io/npm/v/create-personality?color=a1b858&label&style=flat-square)](https://npmjs.com/package/create-personality)
-
-# Personality by _PIGEONPOSSE™_
 
 > :warning: **_Beta_ version**. It can be installed and used but things may change in the future.
 
@@ -23,7 +23,11 @@
 - 🔧 Easy Integration: Works seamlessly with Node.js and other frameworks
 - ⚡ Dynamic Adaptation: Configure real-time personality changes with minimal effort
 - 🌍 Open Source: MIT-licensed, available for public use and contributions
-`˜
+
+## Prerquisits
+
+- installation of `ollama`
+
 ## Installation
 
 To install the library, use npm or yarn:
@@ -76,5 +80,3 @@ This software is licensed with **[GPL-3.0](/LICENSE)**.
 [![Medium](https://img.shields.io/badge/Medium-black?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@pigeonposse)
 
 </p>
-
-### Happy crafting! 🎨
