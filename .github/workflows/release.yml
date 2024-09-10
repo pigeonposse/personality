@@ -22,44 +22,12 @@ env:
 ###############################################################################
 
 jobs:
-
-  #########################################################################
-  # CHECK LINUX BUILD
-  #########################################################################
-  check-build-ubuntu:
-    name: 🛠️ Check Build on Linux
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.1
-        with:
-          access_token: ${{ env.GITHUB_TOKEN }}
-
-      - name: ⬇️ Checkout
-        uses: actions/checkout@v4
-      
-      - name: 🟢 Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: 🥡 Install pnpm
-        uses: pnpm/action-setup@v3
-      
-      - name: 🧩 Install dependencies
-        run: pnpm install --no-frozen-lockfile
-
-
-  #########################################################################
-  # RELESE ON MACOS
-  #########################################################################
-  release:
   
+  release-lib:
+
     name: 🚀 Release
     runs-on: macos-latest
     timeout-minutes: 10
-    needs: check-build-ubuntu
 
     steps:
 
@@ -104,7 +72,7 @@ jobs:
       #########################################################################
 
       - name: 🏗 Build
-        run: pnpm build:packages
+        run: pnpm build:bins
 
       #########################################################################
       # PUBLISH
@@ -126,35 +94,17 @@ jobs:
       - name: Get updated versions if exists
         id: updated
         run: |
-          docs_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | select(.name == "@bepp/docs") | .version')
-          core_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r 'map(select(.name == "@bepp/gh-action" or .name == "@bepp/core" or .name == "@bepp/bepp")) | .[0].version // empty' )
+          core_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r 'map(select(.name == "create-personality")) | .[0].version // empty' )
           core_version_major=${core_version%%.*}
           echo Set changesets outputs
           echo '${{ steps.changesets.outputs }}'
           echo Set updated versions
           echo "CORE=$core_version CORE_MAJOR=$core_version_major DOCS=$docs_version"
           echo "core_version=$core_version" >> $GITHUB_OUTPUT
-          echo "docs_version=$docs_version" >> $GITHUB_OUTPUT
-          echo "core_version_major=$core_version_major" >> $GITHUB_OUTPUT
 
 
-      - name: 🌥 Deploy docs in Cloudflare pages if is @bepp/docs is updated
-        uses: cloudflare/pages-action@v1
-        if: steps.updated.outputs.docs_version != ''
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ env.GITHUB_TOKEN }}
-          branch: main
-          projectName: "bepp"
-          directory: 'packages/docs/dist'
-          wranglerVersion: '3'
 
-      - name: Release action if @bepp/core is updated
-        if: ${{ steps.updated.outputs.core_version != '' && steps.updated.outputs.core_version_major != '' }}
-        run: pnpm release-action '${{steps.updated.outputs.core_version}}' '${{steps.updated.outputs.core_version_major}}'
-
-      - name: Release binary if @bepp/core is updated
+      - name: Release binary 
         if: ${{ steps.updated.outputs.core_version != '' && steps.updated.outputs.core_version_major != '' }}
         uses: ncipollo/release-action@v1
         with: 
@@ -162,7 +112,7 @@ jobs:
           draft: false
           prerelease: false
           allowUpdates: true
-          artifacts: "packages/bin/dist/zip/*"
+          artifacts: "build/zip/*"
           omitBodyDuringUpdate: true
 
 ###############################################################################
