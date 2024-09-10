@@ -1,6 +1,6 @@
 {
 	"name": "create-personality",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "Library for crafting and sustaining AI personalities",
 	"keywords": [
 		"ia",
@@ -85,6 +85,8 @@
 		"typescript": "5.5.4"
 	},
 	"dependencies": {
+		"@clack/prompts": "^0.7.0",
+		"conf": "^13.0.1",
 		"inquirer": "10.2.2"
 	},
 	"commitlint": {
