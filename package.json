@@ -40,6 +40,7 @@
 	"bin": {
 		"personality": "./bin/cli.js"
 	},
+	"packageManager": "pnpm@9.7.0",
 	"scripts": {
 		"dev": "node bin/cli.js",
 		"build:bins": "node ./build.js",
