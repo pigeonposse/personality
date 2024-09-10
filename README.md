@@ -11,7 +11,7 @@
 
 > :warning: **_Beta_ version**. It can be installed and used but things may change in the future.
 
-[![demo](docs/demo.mov)](https://npmjs.com/package/create-personality)
+[![demo](docs/demo.mp4)](https://npmjs.com/package/create-personality)
 
 ## Library for Crafting and Sustaining AI Personalities
 
