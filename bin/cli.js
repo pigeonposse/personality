@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const { Personality, AIDetector, ConfigApplier } = require('../index');
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require('node:fs').promises;
+const path = require('node:path');
 const inquirer = require('inquirer');
 const {spawnSync} = require('node:child_process');   
 
