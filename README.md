@@ -17,18 +17,13 @@
 
 `Personality` is a library designed to customize the personality configuration of AI running locally. It allows users to define and adjust the traits, communication style, and behavior of their AI models in detail, ensuring responses are coherent and aligned with specific project goals. Ideal for developers looking to add a distinctive and human-like touch to their AI applications.
 
-## Feature
+## Features
 
 - 🧩 Customize your local AI (Gemma, GPT, LLaMA, etc.): Quickly and easily, in just a few seconds.
-
 - 🔧 Simple integration: Seamlessly works with Node.js and other frameworks.
-
 - ⚡ Enhanced performance: Your configurations and data are cached for faster processing in future interactions.
-
 - 🌐 Automatic language detection: Adapts to the language you're using for smooth interaction with your custom AI.
-
 - 💻 Adaptability: Works in any development environment using the [binary](https://github.com/pigeonposse/personality/releases/latest).
-
 - 🌍 Open-source: MIT licensed, available for public use and contributions.
 
 ## Personalized AI Setup Form
