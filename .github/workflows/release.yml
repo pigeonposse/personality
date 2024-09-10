@@ -99,13 +99,13 @@ jobs:
           echo Set changesets outputs
           echo '${{ steps.changesets.outputs }}'
           echo Set updated versions
-          echo "CORE=$core_version CORE_MAJOR=$core_version_major DOCS=$docs_version"
+          echo "CORE=$core_version CORE_MAJOR=$core_version_major"
           echo "core_version=$core_version" >> $GITHUB_OUTPUT
 
 
 
       - name: Release binary 
-        if: ${{ steps.updated.outputs.core_version != '' && steps.updated.outputs.core_version_major != '' }}
+        if: ${{ steps.updated.outputs.core_version != '' }}
         uses: ncipollo/release-action@v1
         with: 
           tag: "v${{ steps.updated.outputs.core_version }}"
