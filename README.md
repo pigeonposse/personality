@@ -4,7 +4,7 @@
 [![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate) 
 
 [![Size](https://img.shields.io/bundlephobia/min/create-personality?label=Size&style=flat-square)](https://npmjs.com/package/create-personality)
-[![License](https://img.shields.io/github/license/pigeon-posse/create-personality?color=blue&label=License&style=flat-square)](https://npmjs.com/package/create-personality)
+[![License](https://img.shields.io/github/license/pigeonposse/personality?color=blue&label=License&style=flat-square)](https://npmjs.com/package/create-personality)
 [![Version](https://img.shields.io/npm/v/create-personality?color=a1b858&label&style=flat-square)](https://npmjs.com/package/create-personality)
 
 # Personality by _PIGEONPOSSE™_
@@ -26,7 +26,7 @@
 
 To install the library, use npm or yarn:
 
-```
+```bash
 # Using npm
 npm create personality
 
