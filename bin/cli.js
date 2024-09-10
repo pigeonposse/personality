@@ -78,7 +78,7 @@ done
       ]);
 
       if (modeAuto) {
-          spawnSync(`bash ${startScriptPath}`, {
+          spawnSync(`bash "${startScriptPath}"`, {
             shell : true,
             stdio : 'inherit',
           });
