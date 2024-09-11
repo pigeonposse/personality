@@ -1,5 +1,7 @@
 # Personality by _PIGEONPOSSE_
 
+[![HEADER](docs/banner.png)](https://npmjs.com/package/create-personality)
+
 [![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](https://pigeonposse.com/)
 [![About us](https://img.shields.io/badge/About%20us-grey?style=flat-square)](https://pigeonposse.com/?popup=about)
 [![Github](https://img.shields.io/badge/Github-grey?style=flat-square)](https://github.com/pigeon-posse)
@@ -9,13 +11,13 @@
 [![License](https://img.shields.io/github/license/pigeonposse/personality?color=blue&label=License&style=flat-square)](https://npmjs.com/package/create-personality)
 [![Version](https://img.shields.io/npm/v/create-personality?color=a1b858&label&style=flat-square)](https://npmjs.com/package/create-personality)
 
-> :warning: **_Beta_ version**. It can be installed and used but things may change in the future.
+## Library/CLI for Crafting and Sustaining AI Personalities
 
-[![demo](docs/demo.gif)](https://npmjs.com/package/create-personality)
-
-## Library for Crafting and Sustaining AI Personalities
+![EXPLANATION](docs/explanation.png)
 
 `Personality` is a library designed to customize the personality configuration of AI running locally. It allows users to define and adjust the traits, communication style, and behavior of their AI models in detail, ensuring responses are coherent and aligned with specific project goals. Ideal for developers looking to add a distinctive and human-like touch to their AI applications.
+
+[![demo](docs/demo.gif)](https://npmjs.com/package/create-personality)
 
 ## Features
 

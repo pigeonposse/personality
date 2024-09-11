@@ -16,6 +16,8 @@ import {
 	resolve as resolvePath, 
 } from 'node:path'
 
+import { name } from './pkg.js'
+
 export {
 	resolvePath,
 	joinPath,
@@ -27,8 +29,8 @@ export {
 }
 
 export const ask = inquirer.prompt
-export const appID = 'personality' 
-
+export const appID = name
+export const userLang = process.env.LANG || process.env.LANGUAGE || process.env.LC_ALL || process.env.LC_MESSAGES
 export const generateUniqueFileId = () => {
 
 	const now        = new Date()
@@ -58,7 +60,6 @@ export const ensureDirectoryExists = async dirPath => {
 		if ( error.code === 'ENOENT' ) {
 
 			await mkdir( dirPath, { recursive: true } )
-			console.log( `Directory created: ${dirPath}` )
 		
 		} else {
 

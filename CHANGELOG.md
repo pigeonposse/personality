@@ -1,5 +1,11 @@
 # create-personality
 
+## 0.2.0
+
+### Minor Changes
+
+- add linePrompt, bin help, flags supports, library mode...
+
 ## 0.1.8
 
 ### Patch Changes

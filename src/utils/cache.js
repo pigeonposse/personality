@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Conf from 'conf'
 
 import { appID } from './main.js'
