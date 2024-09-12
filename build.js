@@ -1,11 +1,18 @@
-import { build } from '@backan/builder'
+import { build }                  from '@backan/builder'
+import { createRequire }          from 'module'
+import { resolve as resolvePath } from 'node:path'
 
-import {
-	appID,
-	resolvePath, 
-} from './src/utils/main.js'
 
-build( {
-	input : resolvePath( 'bin/cli.js' ),
-	name  : appID, 
-} )
+const require = createRequire( import.meta.url )
+const pkg     = require( './package.json' )
+
+const run = async () => {
+
+
+	// await build( {
+	// 	input : resolvePath( './build/cli.cjs' ),
+	// 	name  : pkg.extra.id, 
+	// } )
+
+} 
+run()
