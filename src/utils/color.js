@@ -1,9 +1,9 @@
-import pc from 'picocolors'
+import color from 'kleur'
 
-export const green = pc.green
-export const italic = pc.italic
-export const underline = pc.underline
-export const blue = pc.blue
-export const bgBlue = pc.bgBlue
+export const green = color.green
+export const italic = color.italic
+export const underline = color.underline
+export const blue = color.blue
+export const bgBlue = color.bgBlue
 export const link = v => underline( italic( v ) )
-export const gray = pc.gray
+export const gray = color.gray

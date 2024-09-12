@@ -1,4 +1,4 @@
-import inquirer from 'inquirer'
+
 import {
 	exec,
 	execSync,
@@ -28,7 +28,6 @@ export {
 	spawnSync, 
 }
 
-export const ask = inquirer.prompt
 export const appID = name
 export const userLang = process.env.LANG || process.env.LANGUAGE || process.env.LC_ALL || process.env.LC_MESSAGES
 export const generateUniqueFileId = () => {
