@@ -1,5 +1,11 @@
 # create-personality
 
+## 0.2.2
+
+### Patch Changes
+
+- up ver
+
 ## 0.2.1
 
 ### Patch Changes

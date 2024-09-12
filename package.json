@@ -1,6 +1,6 @@
 {
 	"name": "create-personality",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "Library for crafting and sustaining AI personalities",
 	"keywords": [
 		"ia",
@@ -43,10 +43,9 @@
 	"packageManager": "pnpm@9.7.0",
 	"scripts": {
 		"dev": "vite build && node dist/cli.js",
-		"test-build": "rsbuild build",
 		"build": "pnpm run --sequential \"/^build:.*/\"",
 		"build:lib": "vite build",
-		"build:bins": "node ./build.js",
+		"build:bins": "rsbuild build && node ./build.js",
 		"update-version": "changeset && changeset version",
 		"push": "git add . && cz && git push -f origin $@",
 		"push:main": "pnpm push main"
@@ -61,8 +60,7 @@
 	],
 	"license": "GPL-3.0",
 	"devDependencies": {
-		"@babel/preset-env": "^7.25.4",
-		"@backan/builder": "0.0.15",
+		"@backan/builder": "0.0.16",
 		"@changesets/changelog-github": "0.5.0",
 		"@changesets/cli": "2.27.8",
 		"@chialab/esbuild-plugin-babel": "^0.18.0",
@@ -72,13 +70,10 @@
 		"@rsbuild/core": "^1.0.2",
 		"@typescript-eslint/eslint-plugin": "8.2.0",
 		"@typescript-eslint/parser": "8.2.0",
-		"@vercel/ncc": "^0.38.1",
 		"commitizen": "4.3.0",
 		"commitlint-config-gitmoji": "2.3.1",
 		"cz-customizable": "7.2.1",
 		"cz-emoji": "1.3.2-canary.2",
-		"esbuild": "^0.23.1",
-		"esbuild-plugin-babel": "^0.2.3",
 		"eslint": "8.57.0",
 		"eslint-plugin-align-assignments": "1.1.2",
 		"eslint-plugin-align-import": "1.0.0",
@@ -97,8 +92,8 @@
 	},
 	"dependencies": {
 		"@clack/prompts": "0.7.0",
-		"kleur": "4.1.5",
 		"conf": "13.0.1",
+		"kleur": "4.1.5",
 		"update-notifier": "7.3.1"
 	},
 	"commitlint": {

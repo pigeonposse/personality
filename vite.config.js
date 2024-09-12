@@ -20,6 +20,7 @@ export default defineConfig( {
 		lib       : {
 			entry   : [ 'src/main', 'src/cli' ],
 			formats : [ 'es' ],
+
 		},
 	},
 } )

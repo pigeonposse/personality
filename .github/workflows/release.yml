@@ -74,7 +74,6 @@ jobs:
       - name: 🏗 Build
         run: |
           pnpm build
-          # pnpm build:bins
 
       #########################################################################
       # PUBLISH
@@ -106,16 +105,16 @@ jobs:
 
 
 
-      # - name: Release binary 
-      #   if: ${{ steps.updated.outputs.core_version != '' }}
-      #   uses: ncipollo/release-action@v1
-      #   with: 
-      #     tag: "v${{ steps.updated.outputs.core_version }}"
-      #     draft: false
-      #     prerelease: false
-      #     allowUpdates: true
-      #     artifacts: "build/zip/*"
-      #     omitBodyDuringUpdate: true
+      - name: Release binary 
+        if: ${{ steps.updated.outputs.core_version != '' }}
+        uses: ncipollo/release-action@v1
+        with: 
+          tag: "v${{ steps.updated.outputs.core_version }}"
+          draft: false
+          prerelease: false
+          allowUpdates: true
+          artifacts: "build/zip/*"
+          omitBodyDuringUpdate: true
 
 
 ###############################################################################
