@@ -14,16 +14,16 @@ importers:
       conf:
         specifier: 13.0.1
         version: 13.0.1
+      kleur:
+        specifier: 4.1.5
+        version: 4.1.5
       update-notifier:
         specifier: 7.3.1
         version: 7.3.1
     devDependencies:
-      '@babel/preset-env':
-        specifier: ^7.25.4
-        version: 7.25.4(@babel/core@7.25.2)
       '@backan/builder':
-        specifier: 0.0.15
-        version: 0.0.15
+        specifier: 0.0.16
+        version: 0.0.16
       '@changesets/changelog-github':
         specifier: 0.5.0
         version: 0.5.0
@@ -51,9 +51,6 @@ importers:
       '@typescript-eslint/parser':
         specifier: 8.2.0
         version: 8.2.0(eslint@8.57.0)(typescript@5.6.2)
-      '@vercel/ncc':
-        specifier: ^0.38.1
-        version: 0.38.1
       commitizen:
         specifier: 4.3.0
         version: 4.3.0(@types/node@22.5.4)(typescript@5.6.2)
@@ -66,12 +63,6 @@ importers:
       cz-emoji:
         specifier: 1.3.2-canary.2
         version: 1.3.2-canary.2
-      esbuild:
-        specifier: ^0.23.1
-        version: 0.23.1
-      esbuild-plugin-babel:
-        specifier: ^0.2.3
-        version: 0.2.3(@babel/core@7.25.2)
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -111,9 +102,6 @@ importers:
       eslint-plugin-yaml:
         specifier: 0.5.0
         version: 0.5.0
-      kleur:
-        specifier: ^4.1.5
-        version: 4.1.5
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -728,8 +716,8 @@ packages:
     resolution: {integrity: sha512-/l42B1qxpG6RdfYf343Uw1vmDjeNhneUXtzhojE7pDgfpEypmRhI6j1kr17XCVv4Cgl9HdAiQY2x0GwKm7rWCw==}
     engines: {node: '>=6.9.0'}
 
-  '@backan/builder@0.0.15':
-    resolution: {integrity: sha512-OMPT3okkKaflFUVTSLUUaApKeyR3/JeXTDyw5gWa28YQkDlQbtf6J2HFjdoGp7QgoWjW++Q46Egxy9fp1MXjAQ==}
+  '@backan/builder@0.0.16':
+    resolution: {integrity: sha512-7kVzzOY2sxkv+ZljRAU6RHI0ZE7MPe3jDL6Xd6Bg/xktg3f4Oj1uKVc/+UWti/398E4MjK8FHYQBo0N0XgecpQ==}
     hasBin: true
 
   '@changesets/apply-release-plan@7.0.5':
@@ -2270,11 +2258,6 @@ packages:
 
   es6-promise@3.3.1:
     resolution: {integrity: sha512-SOp9Phqvqn7jtEUxPWdWfWoLmyt2VaJ6MpvP9Comy1MceMXqE6bxvaTu4iaxpYYPzhny28Lc+M87/c2cPK6lDg==}
-
-  esbuild-plugin-babel@0.2.3:
-    resolution: {integrity: sha512-hGLL31n+GvBhkHUpPCt1sU4ynzOH7I1IUkKhera66jigi4mHFPL6dfJo44L6/1rfcZudXx+wGdf9VOifzDPqYQ==}
-    peerDependencies:
-      '@babel/core': ^7.0.0
 
   esbuild@0.21.5:
     resolution: {integrity: sha512-mg3OPMV4hXywwpoDxu3Qda5xCKQi+vCTZq8S9J/EpkhB2HzKXq4SNFZE3+NK93JYxc8VMSep+lOUSC/RVKaBqw==}
@@ -4408,7 +4391,7 @@ snapshots:
 
   '@babel/generator@7.23.0':
     dependencies:
-      '@babel/types': 7.23.0
+      '@babel/types': 7.25.6
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
       jsesc: 2.5.2
@@ -4560,7 +4543,7 @@ snapshots:
 
   '@babel/parser@7.23.0':
     dependencies:
-      '@babel/types': 7.23.0
+      '@babel/types': 7.25.6
 
   '@babel/parser@7.25.6':
     dependencies:
@@ -5179,7 +5162,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@backan/builder@0.0.15':
+  '@backan/builder@0.0.16':
     dependencies:
       '@vercel/ncc': 0.38.1
       '@yao-pkg/pkg': 5.12.1
@@ -6910,10 +6893,6 @@ snapshots:
       is-symbol: 1.0.4
 
   es6-promise@3.3.1: {}
-
-  esbuild-plugin-babel@0.2.3(@babel/core@7.25.2):
-    dependencies:
-      '@babel/core': 7.25.2
 
   esbuild@0.21.5:
     optionalDependencies:
