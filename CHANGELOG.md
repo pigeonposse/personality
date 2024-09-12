@@ -1,5 +1,11 @@
 # create-personality
 
+## 0.2.1
+
+### Patch Changes
+
+- fix kleur issue
+
 ## 0.2.0
 
 ### Minor Changes
