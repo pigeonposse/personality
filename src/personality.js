@@ -334,7 +334,7 @@ done
 		}else {
 
 			outro( this.texts.outroMsg )
-			await note( `${this.texts.autoRunConfirmation}\nbash ${startScriptPath}` )
+			await note( `${this.texts.autoRunConfirmation}\nbash "${startScriptPath}"` )
 		
 		}
 	
