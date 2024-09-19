@@ -1,11 +1,16 @@
 import { defineConfig } from '@rsbuild/core'
 
+import {
+	distPathOnly,
+	cliSrcPath, 
+} from './core.mjs'
+
 export const distPath = 'build/in'
 
 export default defineConfig( {
-	source : { entry: { cli: './src/cli.js' } },
+	source : { entry: { cli: cliSrcPath } },
 	output : {
-		distPath : { root: distPath },
+		distPath : { root: distPathOnly },
 		target   : 'node',
 		filename : { js: '[name].cjs' },
 	},

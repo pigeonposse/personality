@@ -1,5 +1,11 @@
 # create-personality
 
+## 0.2.3
+
+### Patch Changes
+
+- update env and fix cache from selectedModel opt
+
 ## 0.2.2
 
 ### Patch Changes

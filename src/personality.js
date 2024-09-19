@@ -356,7 +356,7 @@ done
 			if ( !( this.props.selectedModel && this.props.selectedModel.length > 0 ) ) throw Error( this.texts.errorNoModels )
 			
 			const successRes = ( id, initValue ) => log.success( this.questions[ id ] + ':\n' + gray( initValue ) )
-			const choiceFN   = id => async () => {
+			const choiceFN   = ( id, cache = true ) => async () => {
 
 				const initValue = this.flags[ id ] || this.answers[ id ]
 				if( initValue !== undefined ) {
@@ -372,7 +372,7 @@ done
 						label : model,
 						value : model, 
 					} ) ),
-					initialValue : this.cache.get( id ),
+					initialValue : cache ? this.cache.get( id ) : undefined,
 				} ) 
 	
 			}
@@ -387,7 +387,7 @@ done
 					)
 			
 				},
-				[ this.ID.selectedModel ]  : choiceFN( this.ID.selectedModel ),
+				[ this.ID.selectedModel ]  : choiceFN( this.ID.selectedModel, false ),
 				[ this.ID.tone ]           : choiceFN( this.ID.tone ),
 				[ this.ID.formality ]      : choiceFN( this.ID.formality ),
 				[ this.ID.topics ]         : choiceFN( this.ID.topics ),
