@@ -1,5 +1,11 @@
 # create-personality
 
+## 0.2.4
+
+### Patch Changes
+
+- change icon
+
 ## 0.2.3
 
 ### Patch Changes

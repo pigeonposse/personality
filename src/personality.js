@@ -381,7 +381,7 @@ done
 				intro : async () =>{
 		
 					console.log()
-					await intro( '🤖 ' + productName ) 
+					await intro( '😊 ' + productName ) 
 					await note( 
 						`${description}.\n\nVersion:       ${green( italic( version ) )}\nDocumentation: ${blue( link( homepage ) )}`, 
 					)
