@@ -1,4 +1,4 @@
-import { build } from '@backan/builder'
+import { build } from 'binarium'
 
 import {
 	cliDistPath,

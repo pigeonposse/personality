@@ -1,5 +1,11 @@
 # create-personality
 
+## 0.2.5
+
+### Patch Changes
+
+- update deps and change backan-builder by binarium
+
 ## 0.2.4
 
 ### Patch Changes
