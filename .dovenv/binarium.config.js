@@ -5,9 +5,7 @@ import core from './const.js'
 
 /** @type import('binarium').ConfigParams */
 export default {
-	input       : join( core.workspaceDir, './build/in/cli.cjs' ),
-	output      : join( process.cwd(), 'build' ),
-	name        : core.corePkg.extra.id,
-	onlyOs      : true,
-	nodeOptions : { esbuild: { external: [ 'ajv', 'cli-boxes' ] } },
+	input  : join( core.workspaceDir, './build/in/cli.cjs' ),
+	output : join( process.cwd(), 'build' ),
+	name   : core.corePkg.extra.id,
 }
