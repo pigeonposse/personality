@@ -4,7 +4,7 @@ export {
 	group,
 	intro,
 	outro,
-	cancel, 
+	cancel,
 	note,
 	log,
 	confirm,

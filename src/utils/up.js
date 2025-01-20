@@ -5,11 +5,8 @@ import {
 	name,
 } from './pkg.js'
 
-export const updater = updateNotifier( {
-
-	pkg : {
-		version,
-		name,
-	}, 
-} )
+export const updater = updateNotifier( { pkg : {
+	version,
+	name,
+} } )
 

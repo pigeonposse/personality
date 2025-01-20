@@ -9,7 +9,7 @@ import {
 } from '../../package.json'
 
 export const productName = extra.productName
-export const binName = Object.keys( bin )[ 0 ]
+export const binName = Object.keys( bin )[0]
 export {
 	version,
 	name,

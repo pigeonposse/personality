@@ -1,55 +1,48 @@
 ###############################################################################
-# RELEASE 
+# RELEASE
 ###############################################################################
 
-name: 🚀 Release packages
+name: ✅ Tests and check for updates
 
 on:
-#   push:
-#     branches:
-#       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 env:
   GITHUB_TOKEN: ${{ github.token }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN_ALEJO }}
-
+  NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+  LIB_ID: "create-personality"
 
 ###############################################################################
 # JOBS
 ###############################################################################
 
 jobs:
-  
-  release-lib:
-
-    name: 🚀 Release
-    runs-on: macos-latest
-    timeout-minutes: 10
-
+  checks:
+    runs-on: 'macos-14' # this is arm64 and we needed for build bins
     steps:
 
       #########################################################################
-      # INIT & INSTALL
+      # INIT
       #########################################################################
 
-      - name: ⬇️ Checkout
+      - name: ⬇️🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+      - name: ⬇️🛎 Checkout
         uses: actions/checkout@v4
-
-      - name: '📦 Setup jq'
-        uses: dcarbone/install-jq-action@v2
-
-      - name: 🟢 Setup node
-        uses: actions/setup-node@v3
+      - name: ⬇️🥡 Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: ⬇️🟢 Setup node
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22.12.0
+          cache: 'pnpm'
 
-      - name: 🥡 Install pnpm
-        uses: pnpm/action-setup@v3
-
-      - name: Check GitHub API Rate Limit
+      - name: 🐙😺 Check GitHub API Rate Limit
         id: rate_limit
         run: |
           response=$(gh api rate_limit)
@@ -63,20 +56,61 @@ jobs:
         env:
             GH_TOKEN: ${{ env.GITHUB_TOKEN }}
 
-      - name: 🧩 Install dependencies
+    ############################### W ALL DEPENDENCESS ################################
+    #   - name: 🛠 Install System Dependencies for canvas and imagemin npm deps
+    #     run: |
+    #       sudo apt-get update
+    #       sudo apt-get install -y \
+    #         build-essential \
+    #         libcairo2-dev \
+    #         libpango1.0-dev \
+    #         libjpeg-dev \
+    #         libgif-dev \
+    #         librsvg2-dev \
+    #         libpng-dev \
+    #         zlib1g-dev \
+    #         libimagequant-dev \
+    #         nasm
+    #   - name: ⬇️📦 Install dependencies
+    #     run: |
+    #        export npm_config_build_from_source=false
+    #        pnpm install --no-frozen-lockfile
+
+      - name: ⬇️📦 Install dependencies
         run: |
-          pnpm install --no-frozen-lockfile
+           export npm_config_build_from_source=false
+           pnpm install --no-frozen-lockfile --ignore-scripts
 
       #########################################################################
       # BUILD
       #########################################################################
 
-      - name: 🏗 Build
-        run: |
-          pnpm build
+      - name: 🏗 Build packages
+        run: pnpm build
 
       #########################################################################
-      # PUBLISH
+      # TEST
+      #########################################################################
+
+      - name: ✅ Run tests (e2e, unit...)
+        run: pnpm test
+
+      #########################################################################
+      # EXIT IF IS PULL REQUEST
+      #########################################################################
+
+      - name: 🚪 Exit here if is pull request
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "Pull request detected, exiting..."
+          exit 0
+        env:
+          GITHUB_TOKEN: ${{env.GITHUB_TOKEN }}
+
+      #########################################################################
+      #########################################################################
+      # UPDATE VERSIONS
+      #########################################################################
       #########################################################################
 
       - name: 📣 Create Release Pull Request or Publish to npm
@@ -84,8 +118,8 @@ jobs:
         uses: changesets/action@v1
         with:
           title: "chore(release): version packages 🦋"
-          publish: pnpm exec changeset publish
-          version: pnpm exec changeset version
+          version: pnpm . pkg version --silent
+          publish: pnpm . pkg publish --silent
           commit: "chore(release): version packages 🦋 [skip ci]"
           createGithubReleases: false
         env:
@@ -95,25 +129,53 @@ jobs:
       - name: Get updated versions if exists
         id: updated
         run: |
-          core_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r 'map(select(.name == "create-personality")) | .[0].version // empty' )
+          core_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | select(.name == "${{env.LIB_ID}}") | .version')
           core_version_major=${core_version%%.*}
           echo Set changesets outputs
-          echo '${{ steps.changesets.outputs }}'
+          echo '${{ toJSON(steps.changesets.outputs) }}'
           echo Set updated versions
-          echo "CORE=$core_version CORE_MAJOR=$core_version_major"
           echo "core_version=$core_version" >> $GITHUB_OUTPUT
+          echo "core_version_major=$core_version_major" >> $GITHUB_OUTPUT
 
+      #########################################################################
+      # ADD RELEASE TAG
+      #########################################################################
+      - name: Add core version TAG to Github
+        if: steps.updated.outputs.core_version != ''
+        uses: richardsimko/update-tag@v1
+        with:
+          tag_name: ${{steps.updated.outputs.core_version}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      #########################################################################
+      # UPDATE REPO INFO
+      #########################################################################
+      - name: ℹ️➡️ Check for changes in package.json
+        run: |
+          git fetch origin main
+          git diff --name-only HEAD origin/main | grep 'package.json' || echo "No changes in package.json"
+        continue-on-error: true
+        id: check_package_json
+      - name: ℹ️🐙😺➡️ Update repo info
+        if: steps.check_package_json.outputs.stdout != 'No changes in package.json'
+        run: pnpm . gh info update
+        continue-on-error: true
 
-      - name: Release binary 
-        if: ${{ steps.updated.outputs.core_version != '' }}
+      #########################################################################
+      # EXECUTABLES
+      #########################################################################
+      - name: Release binaries
         uses: ncipollo/release-action@v1
+        if: steps.updated.outputs.core_version != ''
         with: 
-          tag: "v${{ steps.updated.outputs.core_version }}"
+          tag: "${{ steps.updated.outputs.core_version }}"
           draft: false
           prerelease: false
           allowUpdates: true
-          artifacts: "build/zip/*"
+          artifacts: "./build/compress/*.zip"
+        #   body: |
+        #     ${{steps.pkg.outputs.release_body}}
           omitBodyDuringUpdate: true
 
 

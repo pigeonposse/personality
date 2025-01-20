@@ -2,7 +2,6 @@ import { Personality } from './personality.js'
 
 /**
  * Initializes and runs the Personality configuration process.
- *
  * @param   {object}        [answers]                    - Optional object containing the initial answers for personality configuration.
  * @param   {string}        [answers.selectedModel]      - The selected AI model to configure.
  * @param   {string}        [answers.tone]               - The overall tone for the AI (e.g., Friendly, Formal, Humorous).
@@ -19,9 +18,8 @@ import { Personality } from './personality.js'
  * @returns {Promise<void>}                              - A promise that resolves when the configuration and setup process completes.
  * @example import { personality } from '../src/main.js'
  * personality( { modeAuto: true } )
- *
  */
-export const personality = async( answers = undefined ) => {
+export const personality = async ( answers = undefined ) => {
 
 	const p = new Personality( { answers } )
 	await p.run()

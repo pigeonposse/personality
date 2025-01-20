@@ -1,64 +1,64 @@
-/** 
-* *****************************************************************************
-* vscode config.
-* *****************************************************************************
-*
-* @description Configuration file for Visual Studio Code (VSCode) settings specific to your project.
-* @see https://code.visualstudio.com/docs/getstarted/settings
-*
-* *****************************************************************************
-*/
+/**
+ * *****************************************************************************
+ * vscode config.
+ * *****************************************************************************
+ * @description Configuration file for Visual Studio Code (VSCode) settings specific to your project.
+ * @see https://code.visualstudio.com/docs/getstarted/settings
+ *
+ * *****************************************************************************
+ */
 {
-	"editor.tabSize": 4,
+	"files.autoSave": "onFocusChange",
 	"editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit"
-    },
-    "files.autoSave": "onFocusChange",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "[markdown]": {
-        "editor.formatOnSave": true,
-        "editor.formatOnPaste": true
-    },
-    "terminal.integrated.defaultProfile.linux": "zsh", 
-    "terminal.integrated.profiles.linux": {
-        "zsh": {
-            "path": "/bin/zsh"
-        },
-    },
-	/** 
-	* *****************************************************************************
-	* ESLINT EXTENSION
-	* *****************************************************************************
-	*/
-    "eslint.validate": [
-        "javascript", 
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "json", 
-        "jsonc", 
-        "json5",
-        "yaml",
-        "toml",
+		"source.fixAll": "explicit",
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+	"eslint.useFlatConfig": true,
+	"stylelint.validate": [
+		"css",
+		"scss",
+		"less",
+		"html",
+		"vue",
+		"svelte",
+		"astro",
+	],
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
 		"markdown",
-		"md"
-    ],
-	/** 
-	* *****************************************************************************
-	* TODO-TREE EXTENSION 
-	* *****************************************************************************
-	*/
-	"todo-tree.filtering.excludeGlobs":[
-		"/node_modules/*/**",
-		"**/node_modules/*/**"
+		"json",
+		"jsonc",
+		"json5",
+		"yaml",
+		"toml",
+		"html",
+		"css",
+		"scss",
+		"less",
+		"svelte",
+		"vue"
 	],
-	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-	"todo-tree.general.tags":[
-		"BUG",
-		"FIXME",
-		"TODO",
-		" * @todo",
-		"[ ]",
-		"[x]"
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[markdown]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"markdownlint.ignore": [
+		"**/LICENSE",
+		"docs/partials/**",
+		"docs/index",
+		"docs/post/**"
 	],
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"terminal.integrated.profiles.linux": {
+		"zsh": {
+			"path": "/bin/zsh"
+		},
+	},
+	"editor.tabSize": 4,
+	"typescript.tsdk": "node_modules/typescript/lib"
 }

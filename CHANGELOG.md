@@ -1,5 +1,11 @@
 # create-personality
 
+## 0.2.6
+
+### Patch Changes
+
+- up build process
+
 ## 0.2.5
 
 ### Patch Changes
