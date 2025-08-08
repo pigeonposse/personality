@@ -3,5 +3,11 @@
 import { personality } from './main.js'
 import { updater }     from './utils/up.js'
 
-updater.notify()
-personality()
+const run = async () => {
+
+	await updater.notify()
+	await personality()
+
+}
+
+run()

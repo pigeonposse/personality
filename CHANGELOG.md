@@ -1,5 +1,11 @@
 # create-personality
 
+## 0.2.8
+
+### Patch Changes
+
+- up deps, add updater not
+
 ## 0.2.7
 
 ### Patch Changes

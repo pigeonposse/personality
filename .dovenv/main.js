@@ -1,9 +1,9 @@
-import { defineConfig } from '@dovenv/core'
-import ppTheme          from '@dovenv/theme-pigeonposse'
+import { defineConfig }     from '@dovenv/core'
+import { pigeonposseTheme } from '@dovenv/theme-pigeonposse'
 
 import core from './const.js'
 
-const theme = ppTheme( { core } )
+const theme = pigeonposseTheme( { core } )
 
 delete theme.custom.docs
 delete theme.check.ws
