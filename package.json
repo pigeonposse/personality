@@ -30,7 +30,11 @@
 		"url": "https://pigeonposse.com/?popup=donate"
 	},
 	"license": "GPL-3.0",
-	"author": "Alejo Malia <alejomalia@gmail.com>",
+	"author": {
+		"name": "Alejo Malia",
+		"email": "alejo@pigeonposse.com",
+		"url": "https://github.com/alejomalia"
+	},
 	"contributors": [
 		{
 			"name": "Angelo",
@@ -44,10 +48,6 @@
 			"import": {
 				"types": "./dist/main.d.mts",
 				"default": "./dist/main.mjs"
-			},
-			"require": {
-				"types": "./dist/main.d.cts",
-				"default": "./dist/main.cjs"
 			}
 		}
 	},
@@ -66,7 +66,6 @@
 		"dev": "node src/cli.js",
 		"prepare": "dovenv git husky --silent",
 		"test": "pnpm run --sequential \"/test:.*/\"",
-		"test:ws-check": "dovenv check --silent",
 		"test:ws-transform": "dovenv transform --silent"
 	},
 	"dependencies": {
@@ -82,7 +81,7 @@
 		"@dovenv/theme-pigeonposse": "1.6.1",
 		"@rsbuild/core": "1.4.15",
 		"binarium": "2.1.1",
-		"eslint": "9.32.0",
+		"eslint": "9.33.0",
 		"typescript": "5.9.2"
 	},
 	"packageManager": "pnpm@10.14.0",
@@ -105,11 +104,12 @@
 		"repoID": "sizium",
 		"rawRepoURL": "https://raw.githubusercontent.com/pigeonposse/sizium",
 		"docsURL": "https://docs.sizium.pigeonposse.com",
-		"type": "library",
-		"subtype": [
-			"bin",
+		"type": [
+			"library",
 			"cli",
-			"env"
+			"bin",
+			"ai",
+			"llm"
 		],
 		"collective": {
 			"id": "pigeonposse",
